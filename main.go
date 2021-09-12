@@ -9,7 +9,11 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World")
+	titleCollection := [...]string{"First Title", "Second Title", "Third Title"}
+
+	for position, title := range titleCollection {
+		fmt.Fprintf(w, "%d: %s ", position, title)
+	}
 }
 
 func main() {
